@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.p1_funcionario.controller.MainController"
+            prefWidth="1050.0"
+            prefHeight="760.0">
+
+    <top>
+        <VBox spacing="6.0">
+            <padding>
+                <Insets top="18.0" right="20.0" bottom="14.0" left="20.0"/>
+            </padding>
+
+            <Label text="SISTEMA DE GESTÃO DE FUNCIONÁRIOS"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+            <Label text="Cadastro, consulta, atualização e relatórios"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+
+                <!-- ABA DE CADASTRO -->
+                <Tab text="Cadastro de Funcionários">
+                    <ScrollPane xmlns="http://javafx.com/javafx"
+                                fitToWidth="true">
+                        <content>
+                            <VBox spacing="14.0">
+                                <padding>
+                                    <Insets top="18.0" right="20.0"
+                                            bottom="20.0" left="20.0"/>
+                                </padding>
+
+                                <Label text="Dados pessoais"
+                                       style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                <GridPane hgap="12.0" vgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="130.0"/>
+                                        <ColumnConstraints hgrow="ALWAYS"
+                                                           minWidth="220.0"/>
+                                        <ColumnConstraints minWidth="130.0"/>
+                                        <ColumnConstraints hgrow="ALWAYS"
+                                                           minWidth="220.0"/>
+                                    </columnConstraints>
+
+                                    <Label text="Matrícula:"
+                                           GridPane.rowIndex="0"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="matriculaField"
+                                               promptText="6 dígitos"
+                                               GridPane.rowIndex="0"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Nome completo:"
+                                           GridPane.rowIndex="0"
+                                           GridPane.columnIndex="2"/>
+                                    <TextField fx:id="nomeField"
+                                               promptText="Nome do funcionário"
+                                               GridPane.rowIndex="0"
+                                               GridPane.columnIndex="3"/>
+
+                                    <Label text="CPF:"
+                                           GridPane.rowIndex="1"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="cpfField"
+                                               promptText="Somente números ou CPF formatado"
+                                               GridPane.rowIndex="1"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Cargo:"
+                                           GridPane.rowIndex="1"
+                                           GridPane.columnIndex="2"/>
+                                    <TextField fx:id="cargoField"
+                                               promptText="Cargo ocupado"
+                                               GridPane.rowIndex="1"
+                                               GridPane.columnIndex="3"/>
+
+                                    <Label text="Salário (R$):"
+                                           GridPane.rowIndex="2"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="salarioField"
+                                               promptText="Ex.: 2500,00"
+                                               GridPane.rowIndex="2"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Nascimento:"
+                                           GridPane.rowIndex="2"
+                                           GridPane.columnIndex="2"/>
+                                    <DatePicker fx:id="nascimentoPicker"
+                                                promptText="Data de nascimento"
+                                                maxWidth="Infinity"
+                                                GridPane.rowIndex="2"
+                                                GridPane.columnIndex="3"/>
+
+                                    <Label text="Data de contratação:"
+                                           GridPane.rowIndex="3"
+                                           GridPane.columnIndex="0"/>
+                                    <DatePicker fx:id="contratacaoPicker"
+                                                promptText="Data de contratação"
+                                                maxWidth="Infinity"
+                                                GridPane.rowIndex="3"
+                                                GridPane.columnIndex="1"/>
+                                </GridPane>
+
+                                <Separator/>
+
+                                <Label text="Endereço"
+                                       style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                <GridPane hgap="12.0" vgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints minWidth="130.0"/>
+                                        <ColumnConstraints hgrow="ALWAYS"
+                                                           minWidth="220.0"/>
+                                        <ColumnConstraints minWidth="130.0"/>
+                                        <ColumnConstraints hgrow="ALWAYS"
+                                                           minWidth="220.0"/>
+                                    </columnConstraints>
+
+                                    <Label text="Logradouro:"
+                                           GridPane.rowIndex="0"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="logradouroField"
+                                               promptText="Rua, avenida..."
+                                               GridPane.rowIndex="0"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Número:"
+                                           GridPane.rowIndex="0"
+                                           GridPane.columnIndex="2"/>
+                                    <TextField fx:id="numeroField"
+                                               promptText="Número"
+                                               GridPane.rowIndex="0"
+                                               GridPane.columnIndex="3"/>
+
+                                    <Label text="Complemento:"
+                                           GridPane.rowIndex="1"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="complementoField"
+                                               promptText="Apartamento, bloco..."
+                                               GridPane.rowIndex="1"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Bairro:"
+                                           GridPane.rowIndex="1"
+                                           GridPane.columnIndex="2"/>
+                                    <TextField fx:id="bairroField"
+                                               GridPane.rowIndex="1"
+                                               GridPane.columnIndex="3"/>
+
+                                    <Label text="Cidade:"
+                                           GridPane.rowIndex="2"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="cidadeField"
+                                               GridPane.rowIndex="2"
+                                               GridPane.columnIndex="1"/>
+
+                                    <Label text="Estado (UF):"
+                                           GridPane.rowIndex="2"
+                                           GridPane.columnIndex="2"/>
+                                    <TextField fx:id="estadoField"
+                                               promptText="Ex.: GO"
+                                               GridPane.rowIndex="2"
+                                               GridPane.columnIndex="3"/>
+
+                                    <Label text="CEP:"
+                                           GridPane.rowIndex="3"
+                                           GridPane.columnIndex="0"/>
+                                    <TextField fx:id="cepField"
+                                               promptText="8 dígitos"
+                                               GridPane.rowIndex="3"
+                                               GridPane.columnIndex="1"/>
+                                </GridPane>
+
+                                <Separator/>
+
+                                <Label text="Ações"
+                                       style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                                <HBox spacing="10.0">
+                                    <Button text="Cadastrar"
+                                            onAction="#cadastrarFuncionario"/>
+                                    <Button text="Atualizar"
+                                            onAction="#atualizarFuncionario"/>
+                                    <Button text="Limpar formulário"
+                                            onAction="#limparFormulario"/>
+                                </HBox>
+
+                                <Label text="Para editar um funcionário, selecione-o na tabela da aba Consulta."
+                                       style="-fx-text-fill: #555555;"/>
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- ABA DE CONSULTA -->
+                <Tab text="Consulta e Gerenciamento">
+                    <VBox spacing="12.0">
+                        <padding>
+                            <Insets top="18.0" right="20.0"
+                                    bottom="20.0" left="20.0"/>
+                        </padding>
+
+                        <Label text="Consultar por matrícula"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <HBox spacing="10.0">
+                            <TextField fx:id="consultaField"
+                                       promptText="Digite a matrícula"
+                                       HBox.hgrow="ALWAYS"/>
+                            <Button text="Consultar"
+                                    onAction="#consultarFuncionario"/>
+                            <Button text="Listar todos"
+                                    onAction="#listarFuncionarios"/>
+                            <Button text="Excluir selecionado"
+                                    onAction="#excluirSelecionado"/>
+                        </HBox>
+
+                        <Separator/>
+
+                        <Label text="Funcionários cadastrados"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <TableView fx:id="tabela"
+                                   VBox.vgrow="ALWAYS"
+                                   prefHeight="450.0">
+                            <columns>
+                                <TableColumn fx:id="colMatricula"
+                                             text="Matrícula"
+                                             prefWidth="100.0"/>
+                                <TableColumn fx:id="colNome"
+                                             text="Nome"
+                                             prefWidth="190.0"/>
+                                <TableColumn fx:id="colCpf"
+                                             text="CPF"
+                                             prefWidth="130.0"/>
+                                <TableColumn fx:id="colCargo"
+                                             text="Cargo"
+                                             prefWidth="150.0"/>
+                                <TableColumn fx:id="colCidade"
+                                             text="Cidade"
+                                             prefWidth="140.0"/>
+                                <TableColumn fx:id="colSalario"
+                                             text="Salário (R$)"
+                                             prefWidth="120.0"/>
+                            </columns>
+                        </TableView>
+
+                        <Label text="Selecione uma linha para carregar os dados no formulário de cadastro."/>
+                    </VBox>
+                </Tab>
+
+                <!-- ABA DE RELATÓRIOS -->
+                <Tab text="Relatórios">
+                    <VBox spacing="14.0">
+                        <padding>
+                            <Insets top="18.0" right="20.0"
+                                    bottom="20.0" left="20.0"/>
+                        </padding>
+
+                        <Label text="Filtrar funcionários por cargo"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <HBox spacing="10.0">
+                            <TextField fx:id="cargoRelatorioField"
+                                       promptText="Digite o cargo"
+                                       HBox.hgrow="ALWAYS"/>
+                            <Button text="Filtrar por cargo"
+                                    onAction="#filtrarPorCargo"/>
+                        </HBox>
+
+                        <Separator/>
+
+                        <Label text="Filtrar por faixa salarial"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <HBox spacing="10.0">
+                            <TextField fx:id="salarioMinField"
+                                       promptText="Salário mínimo"
+                                       HBox.hgrow="ALWAYS"/>
+                            <TextField fx:id="salarioMaxField"
+                                       promptText="Salário máximo"
+                                       HBox.hgrow="ALWAYS"/>
+                            <Button text="Filtrar salário"
+                                    onAction="#filtrarPorSalario"/>
+                        </HBox>
+
+                        <Separator/>
+
+                        <Label text="Relatórios gerenciais"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                        <HBox spacing="10.0">
+                            <Button text="Média salarial por cargo"
+                                    onAction="#gerarRelatorioMedias"/>
+                            <Button text="Funcionários por cidade"
+                                    onAction="#gerarRelatorioCidades"/>
+                            <Button text="Limpar relatório"
+                                    onAction="#limparRelatorio"/>
+                        </HBox>
+
+                        <TextArea fx:id="relatorioArea"
+                                  editable="false"
+                                  prefRowCount="12"
+                                  VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <VBox spacing="4.0">
+            <Separator/>
+            <Label fx:id="statusLabel"
+                   text="Sistema pronto."
+                   style="-fx-padding: 10px 20px 10px 20px;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
